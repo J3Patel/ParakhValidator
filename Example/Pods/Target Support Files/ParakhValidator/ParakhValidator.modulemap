@@ -1,0 +1,6 @@
+framework module ParakhValidator {
+  umbrella header "ParakhValidator-umbrella.h"
+
+  export *
+  module * { export * }
+}
