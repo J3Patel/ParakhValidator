@@ -2,23 +2,49 @@
 //  ViewController.swift
 //  ParakhValidator
 //
-//  Created by j3patel on 08/08/2018.
-//  Copyright (c) 2018 j3patel. All rights reserved.
+//  Created by J3Patel on 08/08/2018.
+//  Copyright (c) 2018 J3Patel. All rights reserved.
 //
 
 import UIKit
+import ParakhValidator
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var postalCodeTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var mobileTextField: UITextField!
+    @IBOutlet weak var addressTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        ParakhValidator.shared.delegate = self
+        firstNameTextField.addCondition(someCond())
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func validate(_ sender: Any) {
+        ParakhValidator.shared.validate()
     }
+}
+
+extension ViewController: PValidatorDelegate {
+    func failedWithObject(_ object: PValidationObject) {
+        print(object)
+    }
+
+    func success() {
+        print("Success")
+    }
+
 
 }
 
+class someCond: PValidationCondition {
+
+    func isValid() -> Bool {
+        return false
+    }
+}

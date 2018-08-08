@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +21,99 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="elv-DK-iOV">
+                                <rect key="frame" x="16" y="28" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vnE-En-3KZ">
+                                <rect key="frame" x="16" y="74" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postal Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yCa-fn-7vu">
+                                <rect key="frame" x="16" y="120" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APs-mc-I5k">
+                                <rect key="frame" x="16" y="166" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="die-ya-vUS">
+                                <rect key="frame" x="16" y="212" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile No." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d6k-FU-2cu">
+                                <rect key="frame" x="16" y="258" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Yre-tf-CPF">
+                                <rect key="frame" x="16" y="304" width="343" height="128"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="1Ma-mi-6SP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJh-Oy-N79">
+                                <rect key="frame" x="284" y="28" width="75" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Validate"/>
+                                <connections>
+                                    <action selector="validate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2bg-RR-eG5"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="d6k-FU-2cu" firstAttribute="leading" secondItem="elv-DK-iOV" secondAttribute="leading" id="0Cg-ON-EQi"/>
+                            <constraint firstItem="elv-DK-iOV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="1nN-Ex-weQ"/>
+                            <constraint firstItem="vnE-En-3KZ" firstAttribute="trailing" secondItem="elv-DK-iOV" secondAttribute="trailing" id="40B-8A-Kij"/>
+                            <constraint firstItem="Yre-tf-CPF" firstAttribute="top" secondItem="d6k-FU-2cu" secondAttribute="bottom" constant="16" id="F2M-FM-Elu"/>
+                            <constraint firstItem="vnE-En-3KZ" firstAttribute="leading" secondItem="elv-DK-iOV" secondAttribute="leading" id="JfV-xD-lCz"/>
+                            <constraint firstItem="elv-DK-iOV" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="Pm2-Bf-fDm"/>
+                            <constraint firstItem="APs-mc-I5k" firstAttribute="trailing" secondItem="elv-DK-iOV" secondAttribute="trailing" id="Sa2-lW-Bcn"/>
+                            <constraint firstItem="d6k-FU-2cu" firstAttribute="trailing" secondItem="elv-DK-iOV" secondAttribute="trailing" id="Yj1-v2-6kq"/>
+                            <constraint firstItem="Yre-tf-CPF" firstAttribute="trailing" secondItem="elv-DK-iOV" secondAttribute="trailing" id="bI2-6j-UvQ"/>
+                            <constraint firstItem="die-ya-vUS" firstAttribute="trailing" secondItem="elv-DK-iOV" secondAttribute="trailing" id="caI-6j-soX"/>
+                            <constraint firstItem="APs-mc-I5k" firstAttribute="top" secondItem="yCa-fn-7vu" secondAttribute="bottom" constant="16" id="ddC-ZV-BGc"/>
+                            <constraint firstItem="Yre-tf-CPF" firstAttribute="leading" secondItem="elv-DK-iOV" secondAttribute="leading" id="eeW-cX-1SW"/>
+                            <constraint firstItem="d6k-FU-2cu" firstAttribute="top" secondItem="die-ya-vUS" secondAttribute="bottom" constant="16" id="ef0-Ec-cB9"/>
+                            <constraint firstItem="die-ya-vUS" firstAttribute="leading" secondItem="elv-DK-iOV" secondAttribute="leading" id="fAX-5t-UL3"/>
+                            <constraint firstItem="APs-mc-I5k" firstAttribute="leading" secondItem="elv-DK-iOV" secondAttribute="leading" id="hOj-0n-eJK"/>
+                            <constraint firstItem="die-ya-vUS" firstAttribute="top" secondItem="APs-mc-I5k" secondAttribute="bottom" constant="16" id="iDx-fz-eqO"/>
+                            <constraint firstItem="yCa-fn-7vu" firstAttribute="trailing" secondItem="elv-DK-iOV" secondAttribute="trailing" id="juS-IA-T7J"/>
+                            <constraint firstItem="yCa-fn-7vu" firstAttribute="top" secondItem="vnE-En-3KZ" secondAttribute="bottom" constant="16" id="nrY-5W-C6X"/>
+                            <constraint firstItem="yCa-fn-7vu" firstAttribute="leading" secondItem="elv-DK-iOV" secondAttribute="leading" id="rcT-tH-JVM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="elv-DK-iOV" secondAttribute="trailing" id="sK5-qo-LeU"/>
+                            <constraint firstItem="vnE-En-3KZ" firstAttribute="top" secondItem="elv-DK-iOV" secondAttribute="bottom" constant="16" id="y98-ri-rIt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressTextView" destination="Yre-tf-CPF" id="nXV-bq-7MF"/>
+                        <outlet property="emailTextField" destination="APs-mc-I5k" id="Net-Hx-gJf"/>
+                        <outlet property="firstNameTextField" destination="elv-DK-iOV" id="uqB-Va-2gC"/>
+                        <outlet property="mobileTextField" destination="d6k-FU-2cu" id="F9r-zm-wDz"/>
+                        <outlet property="passwordTextField" destination="die-ya-vUS" id="cFy-xg-82F"/>
+                        <outlet property="postalCodeTextField" destination="yCa-fn-7vu" id="iZe-zk-vF4"/>
+                        <outlet property="userNameTextField" destination="vnE-En-3KZ" id="GcN-4T-EUL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="106.59670164917542"/>
         </scene>
     </scenes>
 </document>
