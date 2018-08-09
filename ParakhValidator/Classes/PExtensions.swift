@@ -7,21 +7,21 @@
 
 import UIKit
 
-extension UITextView: PValidationObject {
-    public func stringToValidate() -> String? {
-        return text
+extension UITextView: PValidationElement {
+    public func stringToValidate() -> String {
+        return text ?? ""
     }
 }
 
-extension UITextField: PValidationObject {
-    public func stringToValidate() -> String? {
-        return text
+extension UITextField: PValidationElement {
+    public func stringToValidate() -> String {
+        return text ?? ""
     }
 }
 
-extension UILabel: PValidationObject {
-    public func stringToValidate() -> String? {
-        return text
+extension UILabel: PValidationElement {
+    public func stringToValidate() -> String {
+        return text ?? ""
     }
 }
 

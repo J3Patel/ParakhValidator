@@ -15,6 +15,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		ADBD6B16211C6B01007FC886 /* SampleValidationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD6B15211C6B01007FC886 /* SampleValidationCondition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		963F18B7ABDF067500CD211C /* Pods-ParakhValidator_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParakhValidator_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParakhValidator_Example/Pods-ParakhValidator_Example.release.xcconfig"; sourceTree = "<group>"; };
+		ADBD6B15211C6B01007FC886 /* SampleValidationCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleValidationCondition.swift; sourceTree = "<group>"; };
 		CCBF4A39690A3274DB840E0A /* Pods-ParakhValidator_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParakhValidator_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParakhValidator_Example/Pods-ParakhValidator_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DF2C0D9ECE26D6508323143F /* ParakhValidator.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ParakhValidator.podspec; path = ../ParakhValidator.podspec; sourceTree = "<group>"; };
 		ECD03A7EE84462BE00ED76E6 /* Pods_ParakhValidator_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParakhValidator_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 		607FACD21AFB9204008FA782 /* Example for ParakhValidator */ = {
 			isa = PBXGroup;
 			children = (
+				ADBD6B15211C6B01007FC886 /* SampleValidationCondition.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -345,6 +348,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				ADBD6B16211C6B01007FC886 /* SampleValidationCondition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

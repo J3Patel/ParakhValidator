@@ -93,9 +93,9 @@
 		ADBD6B0D211B31E2007FC886 /* ParakhValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD6B09211B2099007FC886 /* ParakhValidator.swift */; };
 		ADBD6B0E211B31E2007FC886 /* PExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD6B05211B1A67007FC886 /* PExtensions.swift */; };
 		ADBD6B0F211B31E2007FC886 /* PValidationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD6AFF211B0DB1007FC886 /* PValidationCondition.swift */; };
-		ADBD6B10211B31E2007FC886 /* PValidationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD6B03211B1868007FC886 /* PValidationObject.swift */; };
+		ADBD6B10211B31E2007FC886 /* PValidationElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD6B03211B1868007FC886 /* PValidationElement.swift */; };
 		ADBD6B11211B31E2007FC886 /* PValidatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD6B07211B1B48007FC886 /* PValidatorDelegate.swift */; };
-		ADBD6B14211B3B26007FC886 /* PValidationObjectForCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD6B13211B3B26007FC886 /* PValidationObjectForCondition.swift */; };
+		ADBD6B14211B3B26007FC886 /* PValidationElementWithConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD6B13211B3B26007FC886 /* PValidationElementWithConditions.swift */; };
 		ADEE95A3A188BE3095990E20766BCCC8 /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751C923ACB051055F76821461557965 /* DSL+Wait.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AE0D0D0A67DA4ADE8CDA41B76F272FB1 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA1DF1C7C22E7B20D2DC30FB9D3EF1 /* Configuration.swift */; };
 		AE4DA49ECD693BF384CD824DF02D7C6E /* NMBStringify.m in Sources */ = {isa = PBXBuildFile; fileRef = 613C21AD6E98946BCAA54F25374CE020 /* NMBStringify.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -277,11 +277,11 @@
 		A5B11548A6516BB21526619897608E9F /* BeEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeEmpty.swift; path = Sources/Nimble/Matchers/BeEmpty.swift; sourceTree = "<group>"; };
 		A6288AE2766817391D894EE944596984 /* RaisesException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RaisesException.swift; path = Sources/Nimble/Matchers/RaisesException.swift; sourceTree = "<group>"; };
 		ADBD6AFF211B0DB1007FC886 /* PValidationCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PValidationCondition.swift; path = ParakhValidator/Classes/PValidationCondition.swift; sourceTree = "<group>"; };
-		ADBD6B03211B1868007FC886 /* PValidationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PValidationObject.swift; path = ParakhValidator/Classes/PValidationObject.swift; sourceTree = "<group>"; };
+		ADBD6B03211B1868007FC886 /* PValidationElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PValidationElement.swift; path = ParakhValidator/Classes/PValidationElement.swift; sourceTree = "<group>"; };
 		ADBD6B05211B1A67007FC886 /* PExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PExtensions.swift; path = ParakhValidator/Classes/PExtensions.swift; sourceTree = "<group>"; };
 		ADBD6B07211B1B48007FC886 /* PValidatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PValidatorDelegate.swift; path = ParakhValidator/Classes/PValidatorDelegate.swift; sourceTree = "<group>"; };
 		ADBD6B09211B2099007FC886 /* ParakhValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParakhValidator.swift; sourceTree = "<group>"; };
-		ADBD6B13211B3B26007FC886 /* PValidationObjectForCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PValidationObjectForCondition.swift; path = ParakhValidator/Classes/PValidationObjectForCondition.swift; sourceTree = "<group>"; };
+		ADBD6B13211B3B26007FC886 /* PValidationElementWithConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PValidationElementWithConditions.swift; path = ParakhValidator/Classes/PValidationElementWithConditions.swift; sourceTree = "<group>"; };
 		B2C2E6D41C88E8547B16FD2C42FEF515 /* AssertionRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionRecorder.swift; path = Sources/Nimble/Adapters/AssertionRecorder.swift; sourceTree = "<group>"; };
 		B38F7EB4258060BAA361D06EF1B16D9B /* Example.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Example.swift; path = Sources/Quick/Example.swift; sourceTree = "<group>"; };
 		B4273097B1D0DCCA1E22978B03474F2F /* ExpectationMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpectationMessage.swift; path = Sources/Nimble/ExpectationMessage.swift; sourceTree = "<group>"; };
@@ -502,9 +502,9 @@
 				ADBD6B09211B2099007FC886 /* ParakhValidator.swift */,
 				ADBD6B05211B1A67007FC886 /* PExtensions.swift */,
 				ADBD6AFF211B0DB1007FC886 /* PValidationCondition.swift */,
-				ADBD6B03211B1868007FC886 /* PValidationObject.swift */,
+				ADBD6B03211B1868007FC886 /* PValidationElement.swift */,
 				ADBD6B07211B1B48007FC886 /* PValidatorDelegate.swift */,
-				ADBD6B13211B3B26007FC886 /* PValidationObjectForCondition.swift */,
+				ADBD6B13211B3B26007FC886 /* PValidationElementWithConditions.swift */,
 				8343DB1A4987ED2E89E6D5576435DC79 /* Pod */,
 				9E955DBCF816CF45793A8246EC00C95E /* Support Files */,
 			);
@@ -914,8 +914,8 @@
 				ADBD6B0E211B31E2007FC886 /* PExtensions.swift in Sources */,
 				ADBD6B0D211B31E2007FC886 /* ParakhValidator.swift in Sources */,
 				ADBD6B0F211B31E2007FC886 /* PValidationCondition.swift in Sources */,
-				ADBD6B14211B3B26007FC886 /* PValidationObjectForCondition.swift in Sources */,
-				ADBD6B10211B31E2007FC886 /* PValidationObject.swift in Sources */,
+				ADBD6B14211B3B26007FC886 /* PValidationElementWithConditions.swift in Sources */,
+				ADBD6B10211B31E2007FC886 /* PValidationElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

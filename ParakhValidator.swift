@@ -11,7 +11,7 @@ open class ParakhValidator {
 
     open weak var delegate: PValidatorDelegate?
 
-    private var validationObjectsWithConditions: [String: PValidationObjectForCondition] = [:]
+    private var validationElementsWithConditions: [String: PValidationElementWithConditions] = [:]
 
     open static let shared = ParakhValidator()
 
@@ -19,13 +19,12 @@ open class ParakhValidator {
 
     open func validate() {
         var isSuccess = true
-        var validationObject: PValidationObject?
+        var validationElement: PValidationElement?
         var validationCondition: PValidationCondition?
-        for validationObjectWithConditions in validationObjectsWithConditions {
-            validationObject = validationObjectWithConditions.value.validationObject
-
-            for condition in validationObjectWithConditions.value.conditions {
-                if !condition.isValid() {
+        for validationElementWithConditions in validationElementsWithConditions {
+            validationElement = validationElementWithConditions.value.validationElement
+            for condition in validationElementWithConditions.value.conditions {
+                if let validationElement = validationElement, !condition.isValid(value: validationElement.stringToValidate()) {
                     isSuccess = false
                     validationCondition = condition
                     break
@@ -37,35 +36,35 @@ open class ParakhValidator {
         }
 
         if isSuccess {
-            delegate?.success()
-        } else if let validationObject = validationObject {
-            delegate?.failedWithObject(validationObject)
+            delegate?.validationSucceded()
+        } else if let validationElement = validationElement, let validationCondition = validationCondition {
+            delegate?.failed(with: validationElement, condition: validationCondition)
         }
 
     }
 }
 
 extension ParakhValidator {
-    func add(condition: PValidationCondition, for validationObject: PValidationObject) {
-        if var validationObject = validationObjectsWithConditions[validationObject.name] {
-            validationObject.conditions.append(condition)
+    func add(condition: PValidationCondition, for validationElement: PValidationElement) {
+        if var validationElement = validationElementsWithConditions[validationElement.name] {
+            validationElement.conditions.append(condition)
         } else {
-            validationObjectsWithConditions = [validationObject.name:
-                PValidationObjectForCondition(validationObject: validationObject, conditions: [condition])]
+            validationElementsWithConditions[validationElement.name] =
+                PValidationElementWithConditions(validationElement: validationElement, conditions: [condition])
         }
     }
 
-    func remove(condition: PValidationCondition, from validationObject: PValidationObject) {
-        if var validationObject = validationObjectsWithConditions[validationObject.name] {
-            validationObject.conditions.append(condition)
+    func remove(condition: PValidationCondition, from validationElement: PValidationElement) {
+        if var validationElement = validationElementsWithConditions[validationElement.name] {
+            validationElement.conditions.append(condition)
             var removeIndex: Int?
-            for (index, cond) in validationObject.conditions.enumerated() {
+            for (index, cond) in validationElement.conditions.enumerated() {
                 if cond.name == condition.name {
                     removeIndex = index
                 }
             }
             if let removeIndex = removeIndex {
-                validationObject.conditions.remove(at: removeIndex)
+                validationElement.conditions.remove(at: removeIndex)
             }
         }
     }

@@ -22,7 +22,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ParakhValidator.shared.delegate = self
-        firstNameTextField.addCondition(someCond())
+        firstNameTextField.addConditions(ParakhCondition.email)
+        userNameTextField.addCondition(ParakhCondition.email)
+        postalCodeTextField.addCondition(ParakhCondition.email)
+        passwordTextField.addCondition(ParakhCondition.email)
+        emailTextField.addCondition(ParakhCondition.email)
     }
 
     @IBAction func validate(_ sender: Any) {
@@ -31,20 +35,14 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: PValidatorDelegate {
-    func failedWithObject(_ object: PValidationObject) {
-        print(object)
+    func failed(with element: PValidationElement, condition: PValidationCondition) {
+                print(condition.errorMessage())
     }
 
-    func success() {
-        print("Success")
-    }
 
+    func validationSucceded() {
+         print("Success")
+    }
 
 }
 
-class someCond: PValidationCondition {
-
-    func isValid() -> Bool {
-        return false
-    }
-}

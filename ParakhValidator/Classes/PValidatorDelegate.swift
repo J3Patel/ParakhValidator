@@ -8,6 +8,7 @@
 import UIKit
 
 public protocol PValidatorDelegate: class {
-    func failedWithObject(_ object: PValidationObject)
-    func success()
+    func failed(with element: PValidationElement, condition: PValidationCondition)
+    func validationSucceded()
 }
+
